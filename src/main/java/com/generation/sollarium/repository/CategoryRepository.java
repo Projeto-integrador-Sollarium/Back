@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.generation.sollarium.model.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, Long>{
-	 List<Category> findAllByName(String name);
+	 public List<Category> findAllByNameContainingIgnoreCase(String name);
 
 }

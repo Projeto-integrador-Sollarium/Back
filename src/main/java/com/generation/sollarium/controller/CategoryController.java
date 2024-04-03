@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.sollarium.model.Category;
@@ -68,9 +67,8 @@ public class CategoryController {
 
     // consulta específico
     @GetMapping("/name/{name}")
-    public ResponseEntity<List<Category>> findAllByName(@RequestParam String name) {
-        List<Category> categories = categoryRepository.findAllByName(name);
-        return ResponseEntity.ok(categories);
+    public ResponseEntity<List<Category>> getByName(@PathVariable String name) {
+    	return ResponseEntity.ok(categoryRepository.findAllByNameContainingIgnoreCase(name));
     }
 	
 
