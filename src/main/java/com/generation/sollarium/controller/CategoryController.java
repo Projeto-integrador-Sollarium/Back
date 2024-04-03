@@ -45,12 +45,12 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedCategory);
     }
     // atualizar uma categoria existente
-    @PutMapping("/{id}")
-    public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody Category category) {
-        if (!categoryRepository.existsById(id)) {
+    @PutMapping
+    public ResponseEntity<Category> update(@RequestBody Category category) {
+        if (!categoryRepository.existsById(category.getId())) {
             return ResponseEntity.notFound().build();
         }
-        category.setId(id);
+        //category.setId();
         Category updatedCategory = categoryRepository.save(category);
         return ResponseEntity.ok(updatedCategory);
     }
