@@ -5,26 +5,26 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 
 @Entity
-@Table(name = "tb_categoria")
-public class Categoria {
+@Table(name = "tb_category")
+public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	
-	@NotNull(message = "O Atributo nome é obrigatório.")
+	@NotBlank(message = "O Atributo nome é obrigatório.")
 	@Size(min = 3, max = 255, message = "O atributo nome deve conter no mínimo 3 e no máximo 255 caracteres.")
 	private String name;
 	
-	@NotNull(message = "O Atributo descrição é obrigatório.")
+	@NotBlank(message = "O Atributo descrição é obrigatório.")
 	@Size(min = 3, max = 1000, message = "O atributo descrição deve conter no mímino 3 e no máximo 1000 caracteres.")
-	private String descricao;
+	private String description;
 
 	public Long getId() {
 		return id;
@@ -42,12 +42,12 @@ public class Categoria {
 		this.name = name;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	
