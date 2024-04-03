@@ -67,7 +67,7 @@ public class CategoryController {
     }
 
     // consulta específico
-    @GetMapping("/findByNome")
+    @GetMapping("/name/{name}")
     public ResponseEntity<List<Category>> findAllByNome(@RequestParam String name) {
         List<Category> categories = categoryRepository.findAllByName(name);
         return ResponseEntity.ok(categories);
