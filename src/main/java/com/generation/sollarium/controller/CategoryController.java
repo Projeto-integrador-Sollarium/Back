@@ -18,7 +18,7 @@ import com.generation.sollarium.model.Category;
 import com.generation.sollarium.repository.CategoryRepository;
 
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping("/categories")
 public class CategoryController {
 	@Autowired
     private CategoryRepository categoryRepository;
