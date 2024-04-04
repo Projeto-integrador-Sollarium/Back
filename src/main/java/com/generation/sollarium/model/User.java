@@ -17,19 +17,19 @@ public class User {
 	private Long id;
 	
 	@NotBlank
-	@Size(min = 2, max = 255, message = "O atributo nome deve conter no mímino 3 e no máximo 1000 caracteres.")
+	@Size(min = 2, max = 255, message = "O atributo nome deve conter no mímino 2 e no máximo 255 caracteres.")
     private String name;
 	
 	@NotBlank 
-	@Size(min = 2, max = 255, message = "O atributo email deve conter no mímino 3 e no máximo 1000 caracteres.")
+	@Size(min = 3, max = 255, message = "O atributo email deve conter no mímino 3 e no máximo 255 caracteres.")
     private String email;
 	
 	@NotBlank 
-	@Size(min = 6, max = 255, message = "O atributo password deve conter no mímino 3 e no máximo 1000 caracteres.")
+	@Size(min = 8, message = "O atributo password deve conter no mímino 8 caracteres.")
     private String password;
 	
 	@NotBlank 
-	@Size(min = 5, max = 255, message = "O atributo address deve conter no mímino 3 e no máximo 1000 caracteres.")
+	@Size(min = 5, max = 255, message = "O atributo address deve conter no mímino 3 e no máximo 255 caracteres.")
     private String address; 
 	
     private String phone;
