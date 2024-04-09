@@ -5,11 +5,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "user")
+@Table(name = "tb_user")
 public class User {
 	
 	@Id
@@ -21,7 +22,7 @@ public class User {
     private String name;
 	
 	@NotBlank 
-	@Size(min = 3, max = 255, message = "O atributo email deve conter no mímino 3 e no máximo 255 caracteres.")
+	@Email(message = "O atributo email deve ser um email válido.")
     private String email;
 	
 	@NotBlank 
