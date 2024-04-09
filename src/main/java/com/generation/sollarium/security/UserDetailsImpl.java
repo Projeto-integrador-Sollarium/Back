@@ -21,6 +21,8 @@ public class UserDetailsImpl implements UserDetails {
 		this.password = user.getPassword();
 	}
 	
+	public UserDetailsImpl() {	}
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return authorities;
