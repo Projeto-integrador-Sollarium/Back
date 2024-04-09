@@ -17,19 +17,19 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+	@NotBlank(message = "O atributo nome não pode estar vazio.")
 	@Size(min = 2, max = 255, message = "O atributo nome deve conter no mímino 2 e no máximo 255 caracteres.")
     private String name;
 	
-	@NotBlank 
+	@NotBlank(message = "O atributo email não pode estar vazio.")
 	@Email(message = "O atributo email deve ser um email válido.")
     private String email;
 	
-	@NotBlank 
+	@NotBlank(message = "O atributo password não pode estar vazio.")
 	@Size(min = 8, message = "O atributo password deve conter no mímino 8 caracteres.")
     private String password;
 	
-	@NotBlank 
+	@NotBlank(message = "O atributo address não pode estar vazio.")
 	@Size(min = 5, max = 255, message = "O atributo address deve conter no mímino 3 e no máximo 255 caracteres.")
     private String address; 
 	
