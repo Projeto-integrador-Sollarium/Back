@@ -1,5 +1,6 @@
 package com.generation.sollarium.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -20,6 +22,11 @@ public class User {
 	@NotBlank(message = "O atributo nome não pode estar vazio.")
 	@Size(min = 2, max = 255, message = "O atributo nome deve conter no mímino 2 e no máximo 255 caracteres.")
     private String name;
+	
+	@Schema(example = "email@email.com.br")
+	@NotNull(message = "O Atributo Usuário é Obrigatório!")
+	@Email(message = "O Atributo Usuário deve ser um email válido!")
+	private String usuario;
 	
 	@NotBlank(message = "O atributo email não pode estar vazio.")
 	@Email(message = "O atributo email deve ser um email válido.")
