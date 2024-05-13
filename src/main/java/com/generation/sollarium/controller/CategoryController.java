@@ -19,6 +19,7 @@ import com.generation.sollarium.repository.CategoryRepository;
 
 @RestController
 @RequestMapping("/categories")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoryController {
 	@Autowired
     private CategoryRepository categoryRepository;
