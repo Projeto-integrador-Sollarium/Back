@@ -30,12 +30,14 @@ public class Product {
 	@NotNull(message = "O atributo inventário é obrigatório.")
     private int inventory;
     
-    @NotNull(message = "O atributo price é obrigatório.")
+    @NotNull(message = "O atributo preço é obrigatório.")
     @Column(precision = 8, scale = 2)
     private BigDecimal price;
     
+	@Size(max = 1000, message = "O atributo descrição deve conter no máximo 1000 caracteres.")
     private String description;
     
+	@Size(max = 1000, message = "O atributo foto deve conter no máximo 1000 caracteres.")
     private String photo;
     
     
